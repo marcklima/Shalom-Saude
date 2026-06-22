@@ -30,6 +30,24 @@
       "description": "Person breathing deeply at peace",
       "imageUrl": "https://picsum.photos/seed/peace5/800/600",
       "imageHint": "peaceful person"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Happy customer female",
+      "imageUrl": "https://picsum.photos/seed/user1/400/400",
+      "imageHint": "happy woman"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Happy customer male",
+      "imageUrl": "https://picsum.photos/seed/user2/400/400",
+      "imageHint": "happy man"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Happy customer family",
+      "imageUrl": "https://picsum.photos/seed/user3/400/400",
+      "imageHint": "happy family"
     }
   ]
 }

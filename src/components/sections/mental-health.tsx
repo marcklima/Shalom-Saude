@@ -1,6 +1,7 @@
+
 "use client";
 
-import { Brain, Heart, ShieldCheck, Lock } from "lucide-react";
+import { Brain, Heart, ShieldCheck, Lock, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useEffect, useRef, useState } from "react";
@@ -9,7 +10,6 @@ export function MentalHealth() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const docImg = PlaceHolderImages.find(img => img.id === "doctor-authority");
-  const familyImg = PlaceHolderImages.find(img => img.id === "happy-family");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,56 +24,79 @@ export function MentalHealth() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white overflow-hidden relative bg-watermark-plus">
+    <section ref={sectionRef} className="py-32 bg-slate-50 overflow-hidden relative">
+      <div className="absolute inset-0 bg-watermark-medical opacity-20 pointer-events-none" />
+      
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center">
-          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <div className="bg-accent/5 p-10 rounded-[3rem] border border-accent/10 relative overflow-hidden group hover-lift">
-              <div className="bg-accent/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
-                <Brain className="w-10 h-10 text-accent" />
-              </div>
-              <h3 className="text-3xl font-black text-primary mb-6">Saúde Mental Prioritária</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Acesso imediato a psicólogos e psiquiatras. Nossa abordagem humanizada foca no seu equilíbrio emocional, essencial para uma vida produtiva e feliz.
-              </p>
-              <div className="flex -space-x-4 mb-4">
-                {[1,2,3].map(i => (
-                  <div key={i} className="w-12 h-12 rounded-full border-4 border-white overflow-hidden">
-                    <Image src={`https://picsum.photos/seed/user${i}/100/100`} width={100} height={100} alt="User" />
-                  </div>
-                ))}
-                <div className="w-12 h-12 rounded-full border-4 border-white bg-accent flex items-center justify-center text-[10px] text-white font-bold">
-                  +10k
-                </div>
-              </div>
-              <p className="text-xs font-bold text-accent uppercase tracking-widest">Vida com propósito e equilíbrio</p>
-            </div>
+        <div className="max-w-4xl mx-auto text-center mb-20">
+          <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-6">
+            <Sparkles className="w-4 h-4" />
+            Exclusivo Shalom Saúde
           </div>
-
-          <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl h-80 relative group">
-              <Image src={docImg?.imageUrl || ""} fill alt="Doctor" className="object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-6">
-                <p className="text-white text-sm font-bold">Especialistas prontos para ouvir você.</p>
-              </div>
-            </div>
-            <div className="rounded-[2rem] overflow-hidden shadow-2xl h-80 relative group mt-12 sm:mt-0">
-              <Image src={familyImg?.imageUrl || ""} fill alt="Happy Family" className="object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-accent/80 to-transparent flex items-end p-6">
-                <p className="text-white text-sm font-bold">Tranquilidade para quem você ama.</p>
-              </div>
-            </div>
-          </div>
+          <h2 className="text-4xl md:text-6xl font-black text-primary tracking-tighter mb-6">
+            Saúde Mental sem barreiras. <br/>
+            <span className="text-accent italic font-light">Cuidado imediato para sua mente.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+            Entendemos que a mente não espera. Nossa plataforma conecta você a psicólogos e psiquiatras qualificados com agilidade e total sigilo.
+          </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 pt-12 border-t">
-          <div className="flex items-center gap-3 text-muted-foreground font-black uppercase tracking-widest text-xs">
-            <ShieldCheck className="w-6 h-6 text-success" />
-            <span>LGPD Compliance</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+            <div className="space-y-8">
+              <div className="flex gap-6 items-start group">
+                <div className="bg-white w-16 h-16 rounded-[1.5rem] shadow-xl flex items-center justify-center shrink-0 border border-slate-100 group-hover:scale-110 transition-transform">
+                  <Brain className="w-8 h-8 text-accent" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-primary mb-2">Psicologia 100% Digital</h4>
+                  <p className="text-muted-foreground leading-relaxed">Sessões por vídeo no conforto da sua casa, com flexibilidade total de horários.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-6 items-start group">
+                <div className="bg-white w-16 h-16 rounded-[1.5rem] shadow-xl flex items-center justify-center shrink-0 border border-slate-100 group-hover:scale-110 transition-transform">
+                  <Heart className="w-8 h-8 text-success" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-primary mb-2">Acolhimento Humanizado</h4>
+                  <p className="text-muted-foreground leading-relaxed">Profissionais treinados para ouvir e guiar você em momentos de ansiedade, estresse ou depressão.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-6 items-start group">
+                <div className="bg-white w-16 h-16 rounded-[1.5rem] shadow-xl flex items-center justify-center shrink-0 border border-slate-100 group-hover:scale-110 transition-transform">
+                  <ShieldCheck className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-primary mb-2">Sigilo e Segurança</h4>
+                  <p className="text-muted-foreground leading-relaxed">Seus dados e consultas são protegidos por criptografia de nível bancário.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-3 text-muted-foreground font-black uppercase tracking-widest text-xs">
-            <Lock className="w-6 h-6 text-success" />
-            <span>Criptografia 256-bit</span>
+
+          <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
+             <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white group">
+                <Image 
+                  src={docImg?.imageUrl || ""} 
+                  width={600} 
+                  height={800} 
+                  alt="Mental Health Professional" 
+                  className="object-cover w-full h-[500px] transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+                <div className="absolute bottom-8 left-8 text-white">
+                  <p className="text-sm font-black uppercase tracking-widest mb-2">Rede Shalom Mental</p>
+                  <p className="text-2xl font-bold leading-tight">Você nunca está sozinho <br/> em sua jornada.</p>
+                </div>
+             </div>
+             {/* Stats overlap */}
+             <div className="absolute -bottom-10 -right-10 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-slate-100 hidden md:block animate-bounce-slow">
+                <p className="text-4xl font-black text-accent mb-1">+15k</p>
+                <p className="text-xs font-bold text-primary uppercase tracking-widest">Vidas Transformadas</p>
+             </div>
           </div>
         </div>
       </div>

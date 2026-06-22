@@ -1,3 +1,4 @@
+
 import { Suspense } from "react";
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
@@ -7,26 +8,65 @@ import { HealthOrientation } from "@/components/sections/health-orientation";
 import { MentalHealth } from "@/components/sections/mental-health";
 import { Pricing } from "@/components/sections/pricing";
 import { Steps } from "@/components/sections/steps";
+import { Testimonials } from "@/components/sections/testimonials";
 import { Footer } from "@/components/sections/footer";
 import { ReferralManager } from "@/components/referral-manager";
 import { CtaButton } from "@/components/cta-button";
-import { ShieldCheck, ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background text-foreground font-body antialiased">
       <Suspense fallback={null}>
         <ReferralManager />
       </Suspense>
       <Header />
-      <Hero />
-      <PainRelief />
-      <Telemedicine />
-      <HealthOrientation />
-      <MentalHealth />
-      <Pricing />
-      <Steps />
       
+      <Hero />
+      
+      <div className="py-12 flex justify-center bg-white border-y">
+        <CtaButton className="scale-110">Garantir Meu Acesso Agora <ArrowRight className="ml-2 w-5 h-5" /></CtaButton>
+      </div>
+
+      <PainRelief />
+
+      <div className="py-12 flex justify-center bg-primary border-y border-white/10">
+        <CtaButton className="bg-accent hover:bg-white hover:text-accent shadow-accent/20">Quero Telemedicina 24h</CtaButton>
+      </div>
+
+      <Telemedicine />
+
+      <div className="py-12 flex justify-center bg-white border-y">
+        <CtaButton variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">Ver Todas Especialidades</CtaButton>
+      </div>
+
+      <HealthOrientation />
+
+      <div className="py-12 flex justify-center bg-background border-y">
+        <CtaButton>Falar com Assistente IA</CtaButton>
+      </div>
+
+      <MentalHealth />
+
+      <div className="py-12 flex justify-center bg-white border-y">
+        <CtaButton className="bg-success">Iniciar Minha Jornada Mental</CtaButton>
+      </div>
+
+      <Testimonials />
+
+      <div className="py-12 flex justify-center bg-background border-y">
+        <CtaButton>Ver Planos e Preços</CtaButton>
+      </div>
+
+      <Pricing />
+
+      <div className="py-12 flex justify-center bg-white border-y">
+        <CtaButton pulse={false}>Escolher Meu Plano</CtaButton>
+      </div>
+
+      <Steps />
+
+      {/* Seção Final Impactante */}
       <section className="py-40 bg-accent text-white text-center relative overflow-hidden border-b border-white/5">
         <div className="container mx-auto px-4 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-10 backdrop-blur-sm border border-white/20">
