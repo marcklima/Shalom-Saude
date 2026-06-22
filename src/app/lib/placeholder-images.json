@@ -1,0 +1,23 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-health",
+      "description": "Family smiling with a doctor in the background",
+      "imageUrl": "https://picsum.photos/seed/123/1200/800",
+      "imageHint": "family health"
+    },
+    {
+      "id": "telemedicine",
+      "description": "Doctor on a digital tablet screen",
+      "imageUrl": "https://picsum.photos/seed/456/800/600",
+      "imageHint": "telemedicine doctor"
+    },
+    {
+      "id": "mental-health",
+      "description": "Person meditating peacefully in nature",
+      "imageUrl": "https://picsum.photos/seed/789/800/600",
+      "imageHint": "mental health"
+    }
+  ]
+}
