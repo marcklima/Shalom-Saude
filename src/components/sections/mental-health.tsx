@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Brain, Heart, ShieldCheck, Lock } from "lucide-react";
@@ -25,7 +24,7 @@ export function MentalHealth() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-24 bg-white overflow-hidden relative bg-watermark-plus">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>

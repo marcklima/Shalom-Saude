@@ -1,7 +1,6 @@
-
 "use client";
 
-import { PhoneCall, FileText, ClipboardCheck, ArrowUpRight, Activity } from "lucide-react";
+import { PhoneCall, FileText, ClipboardCheck, ArrowUpRight, Activity, Stethoscope } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Telemedicine() {
@@ -31,7 +30,7 @@ export function Telemedicine() {
   ];
 
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-white relative overflow-hidden bg-watermark-dna">
       {/* Elementos Decorativos de Background */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
@@ -71,64 +70,76 @@ export function Telemedicine() {
           ))}
         </div>
 
-        {/* Specialties Redesign */}
+        {/* Specialties Redesign - Dashboard Style */}
         <div className="relative">
-          <div className="bg-primary p-1 md:p-2 rounded-[3.5rem] shadow-2xl overflow-hidden group">
-            <div className="bg-white rounded-[3rem] p-10 md:p-16 relative overflow-hidden">
+          <div className="bg-primary p-1 md:p-1.5 rounded-[4rem] shadow-2xl overflow-hidden group">
+            <div className="bg-white rounded-[3.8rem] p-8 md:p-16 relative overflow-hidden">
               {/* Watermark Pattern */}
-              <div className="absolute inset-0 bg-watermark-plus opacity-[0.03] pointer-events-none" />
+              <div className="absolute inset-0 bg-watermark-plus opacity-[0.04] pointer-events-none" />
               
-              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 relative z-10">
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16 relative z-10">
                 <div className="max-w-xl">
-                  <span className="text-accent font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Rede Credenciada</span>
-                  <h3 className="text-3xl md:text-4xl font-black text-primary tracking-tight">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Stethoscope className="w-5 h-5 text-accent" />
+                    <span className="text-accent font-black uppercase tracking-[0.3em] text-[10px]">Rede de Excelência Shalom</span>
+                  </div>
+                  <h3 className="text-3xl md:text-5xl font-black text-primary tracking-tighter leading-none">
                     Especialidades Clínicas <br />
-                    <span className="text-accent">Disponíveis 24h</span>
+                    <span className="text-accent italic font-light">Disponíveis em Segundos</span>
                   </h3>
                 </div>
-                <div className="flex items-center gap-3 bg-accent/5 px-6 py-3 rounded-full border border-accent/10">
-                  <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
-                  <span className="text-sm font-bold text-primary/80 uppercase tracking-widest">Especialistas Online Agora</span>
+                <div className="flex flex-col items-end gap-4">
+                  <div className="flex items-center gap-3 bg-success/10 px-6 py-3 rounded-2xl border border-success/20">
+                    <div className="w-2.5 h-2.5 bg-success rounded-full animate-pulse shadow-[0_0_10px_rgba(22,163,74,0.5)]" />
+                    <span className="text-xs font-black text-success uppercase tracking-widest">Especialistas Online 24/7</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-5 relative z-10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4 md:gap-6 relative z-10">
                 {specialties.map((spec, i) => (
                   <div 
                     key={i} 
                     className={cn(
-                      "group relative bg-white p-6 rounded-3xl border border-primary/5 shadow-sm transition-all duration-300",
-                      "hover:bg-primary hover:border-primary hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1 cursor-default"
+                      "group relative bg-slate-50 p-6 rounded-[2rem] border border-transparent transition-all duration-500",
+                      "hover:bg-primary hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2 cursor-default"
                     )}
                   >
-                    <div className="flex flex-col h-full justify-between gap-4">
-                      <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center transition-colors group-hover:bg-white/10">
-                        <ArrowUpRight className="w-4 h-4 text-accent group-hover:text-white" />
+                    <div className="flex flex-col h-full items-center text-center gap-5">
+                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center transition-all duration-500 group-hover:bg-accent group-hover:rotate-12 group-hover:scale-110">
+                        <ArrowUpRight className="w-5 h-5 text-accent group-hover:text-white" />
                       </div>
                       <span className="text-sm font-black text-primary group-hover:text-white tracking-tight transition-colors">
                         {spec}
                       </span>
                     </div>
                     
-                    {/* Hover Decoration */}
-                    <div className="absolute bottom-0 right-0 w-12 h-12 bg-accent/5 rounded-tl-[2rem] rounded-br-3xl -z-10 transition-colors group-hover:bg-white/5" />
+                    {/* Hover Decoration Glow */}
+                    <div className="absolute -inset-2 bg-accent/0 rounded-[2.5rem] -z-10 blur-xl group-hover:bg-accent/10 transition-all duration-500" />
                   </div>
                 ))}
               </div>
 
-              <div className="mt-20 pt-10 border-t border-primary/5 flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
-                <p className="text-muted-foreground text-sm font-medium italic">
-                  * Agendamento imediato ou programado via plataforma digital.
-                </p>
-                <div className="flex -space-x-3">
-                  {[1,2,3,4].map(n => (
-                    <div key={n} className="w-10 h-10 rounded-full border-4 border-white bg-accent/10 overflow-hidden">
-                      <img src={`https://picsum.photos/seed/doc_spec_${n}/100/100`} alt="Specialist" className="w-full h-full object-cover" />
+              <div className="mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-3">
+                    {[1,2,3,4].map(n => (
+                      <div key={n} className="w-12 h-12 rounded-full border-4 border-white bg-slate-100 overflow-hidden shadow-sm">
+                        <img src={`https://picsum.photos/seed/doc_spec_v2_${n}/100/100`} alt="Specialist" className="w-full h-full object-cover" />
+                      </div>
+                    ))}
+                    <div className="w-12 h-12 rounded-full border-4 border-white bg-primary flex items-center justify-center text-[10px] text-white font-black shadow-sm">
+                      +500
                     </div>
-                  ))}
-                  <div className="w-10 h-10 rounded-full border-4 border-white bg-primary flex items-center justify-center text-[8px] text-white font-bold">
-                    +500
                   </div>
+                  <div className="text-left">
+                    <p className="text-xs font-black text-primary uppercase tracking-widest">Equipe Multidisciplinar</p>
+                    <p className="text-xs text-muted-foreground">Prontos para seu atendimento imediato</p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-50 px-6 py-4 rounded-3xl border border-slate-100 italic text-muted-foreground text-xs font-medium max-w-md text-center md:text-right">
+                  "O atendimento que você espera, com a tecnologia que você precisa. Agende agora e fale com um especialista em minutos."
                 </div>
               </div>
             </div>

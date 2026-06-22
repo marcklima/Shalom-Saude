@@ -19,9 +19,10 @@ export function Steps() {
   useEffect(() => {
     if (isHovered) return;
 
+    // Reduzido para 1.5 segundos para uma narrativa mais ágil
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 3000);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, [isHovered, steps.length]);
@@ -29,6 +30,7 @@ export function Steps() {
   return (
     <section className="py-32 bg-white overflow-hidden relative">
       <div className="absolute inset-0 bg-watermark-medical opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-watermark-dna opacity-10 pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24">
@@ -113,7 +115,7 @@ export function Steps() {
         <div className="mt-24 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
            <div className="inline-flex items-center gap-3 bg-primary/5 px-6 py-3 rounded-full text-primary font-bold text-sm border border-primary/10">
              <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
-             Passos automatizados para facilitar sua visualização.
+             Narrativa automatizada para facilitar sua visualização.
            </div>
         </div>
       </div>

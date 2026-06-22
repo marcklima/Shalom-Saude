@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Check } from "lucide-react";
@@ -32,8 +31,8 @@ export function Pricing() {
   ];
 
   return (
-    <section className="py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-background overflow-hidden relative bg-watermark-dna">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-accent font-bold uppercase tracking-[0.2em] text-xs">Investimento em Vida</span>
           <h2 className="text-3xl md:text-5xl font-bold text-primary mt-4 mb-6 tracking-tight">Escolha Seu Caminho</h2>
