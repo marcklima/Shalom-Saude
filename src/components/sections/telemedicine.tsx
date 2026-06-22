@@ -1,3 +1,4 @@
+
 "use client";
 
 import { PhoneCall, FileText, ClipboardCheck, Activity, Stethoscope, ChevronRight } from "lucide-react";
@@ -63,13 +64,13 @@ export function Telemedicine() {
           ))}
         </div>
 
-        {/* Especialidades - Design Moderno e Legível */}
-        <div className="bg-slate-50 rounded-[3rem] p-8 md:p-12 border border-slate-100 relative">
+        {/* Especialidades - Design Moderno, Nítido e Legível */}
+        <div className="bg-slate-50 rounded-[3rem] p-8 md:p-12 border border-slate-100 relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="max-w-xl">
               <div className="flex items-center gap-2 mb-3">
                 <Stethoscope className="w-5 h-5 text-accent" />
-                <span className="text-accent font-black uppercase tracking-[0.2em] text-[10px]">Cuidado que Conecta</span>
+                <span className="text-accent font-black uppercase tracking-[0.2em] text-[10px]">Especialistas Shalom</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-black text-primary tracking-tight">
                 Consulte-se com Especialistas <br />
@@ -78,31 +79,33 @@ export function Telemedicine() {
             </div>
             <div className="flex items-center gap-2 bg-success/10 px-4 py-2 rounded-full border border-success/20">
               <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
-              <span className="text-[10px] font-bold text-success uppercase tracking-widest">Atendimento em todo o Brasil</span>
+              <span className="text-[10px] font-bold text-success uppercase tracking-widest">Atendimento 24h Disponível</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {specialties.map((spec, i) => (
               <div 
                 key={i} 
-                className="group relative bg-white p-5 rounded-2xl border border-slate-200 transition-all duration-300 hover:bg-primary hover:border-primary cursor-default shadow-sm hover:shadow-lg"
+                className="group relative bg-white p-6 rounded-2xl border border-slate-200 transition-all duration-300 hover:bg-primary hover:border-primary cursor-default shadow-sm hover:shadow-md"
               >
-                <div className="flex flex-col items-center text-center gap-3">
+                <div className="flex items-center justify-between gap-3">
                   <span className="text-sm font-bold text-slate-700 group-hover:text-white tracking-tight transition-colors">
                     {spec}
                   </span>
-                  <ChevronRight className="w-4 h-4 text-accent/40 group-hover:text-white transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-accent group-hover:text-white transition-colors" />
                 </div>
               </div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-              Telemedicina gratuita e ilimitada pelo aplicativo oficial
+            <p className="text-[10px] font-black text-muted-foreground/60 uppercase tracking-[0.2em]">
+              Telemedicina 100% Gratuita para assinantes
             </p>
           </div>
+          
+          <div className="absolute top-0 right-0 w-64 h-64 bg-watermark-medical opacity-10 -rotate-12 pointer-events-none" />
         </div>
       </div>
     </section>
