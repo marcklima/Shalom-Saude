@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Play } from "lucide-react";
@@ -17,15 +18,24 @@ export function VideoPresentation() {
           </h2>
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-white aspect-[9/16] md:aspect-video relative">
-          <iframe 
-            src="https://www.instagram.com/p/DY4b-zzRyJH/embed" 
-            className="absolute inset-0 w-full h-full"
-            frameBorder="0" 
-            scrolling="no" 
-            allowTransparency={true}
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
+        {/* Container do Vídeo com Hack de Crop para esconder perfil/links */}
+        <div className="max-w-[400px] mx-auto bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-white relative aspect-[9/16] group">
+          <div className="absolute inset-0 w-full h-[120%] -top-[10%]">
+             <iframe 
+                src="https://www.instagram.com/p/DY4b-zzRyJH/embed" 
+                className="w-full h-full border-none pointer-events-none"
+                frameBorder="0" 
+                scrolling="no" 
+                allowTransparency={true}
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+          </div>
+          
+          {/* Overlay para bloquear cliques e manter o usuário na página */}
+          <div className="absolute inset-0 bg-transparent cursor-default z-20" />
+          
+          {/* Decoração Visual */}
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 w-12 h-1 bg-slate-200 rounded-full z-30" />
         </div>
         
         <div className="mt-12 text-center">
@@ -34,6 +44,10 @@ export function VideoPresentation() {
           </p>
         </div>
       </div>
+      
+      {/* Marcas d'água sutis */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-watermark-plus opacity-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-watermark-medical opacity-10 pointer-events-none" />
     </section>
   );
 }

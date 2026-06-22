@@ -1,3 +1,4 @@
+
 "use client";
 
 import { CheckCircle2, Activity } from "lucide-react";
@@ -24,7 +25,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20 pb-24 bg-white">
-      {/* Background with Overlay */}
+      {/* Background with Overlay e Watermark */}
       <div className="absolute inset-0 -z-10">
         <Image 
           src={heroImg?.imageUrl || ""} 
@@ -34,6 +35,7 @@ export function Hero() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-accent/5"></div>
+        <div className="absolute inset-0 bg-watermark-medical opacity-20 pointer-events-none" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -95,6 +97,10 @@ export function Hero() {
                 </div>
               </div>
             </div>
+            
+            {/* Elementos Decorativos de Fundo */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-success/10 rounded-full blur-3xl animate-pulse" />
           </div>
         </div>
       </div>
