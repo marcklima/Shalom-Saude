@@ -55,6 +55,34 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
   }
+}
+
+@layer components {
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10;
+  }
+  
+  .reveal-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .reveal-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .parallax-bg {
+    @apply bg-fixed bg-center bg-cover;
+  }
+}
+
+@keyframes tag-pulse {
+  0% { transform: scale(1) translateX(-50%); }
+  50% { transform: scale(1.05) translateX(-48%); }
+  100% { transform: scale(1) translateX(-50%); }
+}
+
+.animate-tag-pulse {
+  animation: tag-pulse 2s infinite ease-in-out;
 }
