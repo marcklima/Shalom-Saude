@@ -27,8 +27,7 @@ export default function Home() {
       <Pricing />
       <Steps />
       
-      {/* Final CTA Section - High Contrast and Distinct Background */}
-      <section className="py-40 bg-accent text-white text-center relative overflow-hidden">
+      <section className="py-40 bg-accent text-white text-center relative overflow-hidden border-b border-white/5">
         <div className="container mx-auto px-4 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-10 backdrop-blur-sm border border-white/20">
             Acesso Vitalício à Plataforma
@@ -56,16 +55,10 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Background Watermarks and Textures */}
         <div className="absolute inset-0 bg-grid-subtle text-white/5 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/20 rounded-full blur-[150px] -z-10 animate-pulse"></div>
-        <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute -top-20 -left-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl" />
       </section>
 
-      {/* Breathing space divider - transition from Accent to Primary */}
-      <div className="h-24 bg-gradient-to-b from-accent to-primary" />
-      
       <Footer />
     </main>
   );

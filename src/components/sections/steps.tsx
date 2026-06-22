@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Check, ClipboardList, MapPin, Users, FileText, Send, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Steps() {
-  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const [activeStep, setActiveStep] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const steps = [
     { title: "Dados Pessoais", desc: "Nome, CPF, email e telefone", icon: <ClipboardList className="w-6 h-6" /> },
@@ -15,9 +16,18 @@ export function Steps() {
     { title: "Confirmação", desc: "Confirme e finalize o cadastro", icon: <Send className="w-6 h-6" /> }
   ];
 
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isHovered, steps.length]);
+
   return (
     <section className="py-32 bg-white overflow-hidden relative">
-      {/* Subtle Watermark for Step Section */}
       <div className="absolute inset-0 bg-watermark-medical opacity-30 pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -34,20 +44,23 @@ export function Steps() {
           <div className="absolute top-10 left-0 w-full h-[2px] bg-primary/5 hidden lg:block">
             <div 
               className="h-full bg-success transition-all duration-700 ease-in-out" 
-              style={{ width: hoveredStep !== null ? `${((hoveredStep + 1) / steps.length) * 100}%` : '0%' }}
+              style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
             />
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+          <div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {steps.map((step, i) => {
-              const isActive = hoveredStep !== null && i <= hoveredStep;
-              const isCurrent = hoveredStep === i;
+              const isActive = i <= activeStep;
+              const isCurrent = activeStep === i;
 
               return (
                 <div 
                   key={i} 
-                  onMouseEnter={() => setHoveredStep(i)}
-                  onMouseLeave={() => setHoveredStep(null)}
+                  onClick={() => setActiveStep(i)}
                   className={cn(
                     "relative z-10 flex flex-col items-center text-center group cursor-pointer transition-all duration-500",
                     isCurrent && "scale-105"
@@ -56,11 +69,10 @@ export function Steps() {
                   <div className={cn(
                     "w-20 h-20 rounded-[2rem] transition-all duration-500 flex items-center justify-center mb-8 shadow-xl border-4 relative overflow-hidden",
                     isActive ? "bg-success border-success text-white" : "bg-white border-primary/5 text-primary/40",
-                    isCurrent && "rotate-3 shadow-success/20"
+                    isCurrent && "rotate-3 shadow-success/20 ring-4 ring-success/20"
                   )}>
                     {isActive ? <Check className="w-8 h-8 animate-in zoom-in duration-300" /> : step.icon}
                     
-                    {/* Index Badge */}
                     <div className={cn(
                       "absolute -top-2 -right-2 w-7 h-7 rounded-xl flex items-center justify-center text-[10px] font-black transition-colors shadow-lg",
                       isActive ? "bg-primary text-white" : "bg-muted text-muted-foreground"
@@ -68,7 +80,6 @@ export function Steps() {
                       {i + 1}
                     </div>
 
-                    {/* Progress Fill Background Effect */}
                     <div className={cn(
                       "absolute inset-0 bg-white/20 -translate-x-full transition-transform duration-500",
                       isCurrent && "translate-x-0"
@@ -88,7 +99,6 @@ export function Steps() {
                     {step.desc}
                   </p>
 
-                  {/* Desktop Connecting Arrow */}
                   {i < steps.length - 1 && (
                     <div className="hidden lg:block absolute top-10 -right-4 translate-x-1/2 z-0 opacity-10">
                       <ArrowRight className="w-6 h-6" />
@@ -100,11 +110,10 @@ export function Steps() {
           </div>
         </div>
 
-        {/* Action Suggestion */}
         <div className="mt-24 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
            <div className="inline-flex items-center gap-3 bg-primary/5 px-6 py-3 rounded-full text-primary font-bold text-sm border border-primary/10">
              <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
-             Você pode parar e continuar de onde parou a qualquer momento.
+             Passos automatizados para facilitar sua visualização.
            </div>
         </div>
       </div>
