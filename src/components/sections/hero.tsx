@@ -1,4 +1,3 @@
-
 "use client";
 
 import { CheckCircle2, Play } from "lucide-react";
@@ -24,24 +23,24 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-16 pb-24">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-16 pb-24 bg-watermark-medical bg-repeat">
       {/* Background with Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image 
           src={heroImg?.imageUrl || ""} 
           alt="Shalom Saúde Environment" 
           fill 
-          className="object-cover opacity-20"
+          className="object-cover opacity-10"
           priority
           data-ai-hint="hospital lobby"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-accent/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -92,7 +91,7 @@ export function Hero() {
                 className="object-cover w-full h-full"
                 data-ai-hint="telemedicine patient"
               />
-              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white">
                     <Play className="w-5 h-5 fill-current" />
@@ -108,6 +107,7 @@ export function Hero() {
             {/* Decorative Elements */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute inset-0 bg-grid-subtle text-primary/5 pointer-events-none" />
           </div>
         </div>
       </div>

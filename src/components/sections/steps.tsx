@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -17,8 +16,11 @@ export function Steps() {
   ];
 
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-32 bg-white overflow-hidden relative">
+      {/* Subtle Watermark for Step Section */}
+      <div className="absolute inset-0 bg-watermark-medical opacity-30 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-24">
           <span className="text-accent font-black uppercase tracking-[0.25em] text-[10px] mb-4 block">Eficiência Digital</span>
           <h2 className="text-4xl md:text-5xl font-black text-primary mt-4 mb-6 tracking-tight">Sua jornada em minutos</h2>
@@ -100,7 +102,7 @@ export function Steps() {
 
         {/* Action Suggestion */}
         <div className="mt-24 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
-           <div className="inline-flex items-center gap-3 bg-primary/5 px-6 py-3 rounded-full text-primary font-bold text-sm">
+           <div className="inline-flex items-center gap-3 bg-primary/5 px-6 py-3 rounded-full text-primary font-bold text-sm border border-primary/10">
              <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
              Você pode parar e continuar de onde parou a qualquer momento.
            </div>
