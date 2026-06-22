@@ -7,26 +7,27 @@ export function Telemedicine() {
   const features = [
     { 
       icon: <PhoneCall className="w-8 h-8" />, 
-      title: "Teleconsulta 24h", 
-      desc: "Acesso a médicos de plantão via vídeo ou chat, sem agendamento prévio." 
+      title: "Teleconsulta Ilimitada", 
+      desc: "Acesso a médicos de plantão via vídeo ou chat pelo app, sem limites de uso." 
     },
     { 
       icon: <FileText className="w-8 h-8" />, 
       title: "Receita Digital", 
-      desc: "Prescrições enviadas diretamente para o seu celular, válidas em todo o Brasil." 
+      desc: "Prescrições e atestados enviados diretamente para o seu celular com validade nacional." 
     },
     { 
       icon: <ClipboardCheck className="w-8 h-8" />, 
-      title: "Orientação Médica", 
-      desc: "Suporte clínico especializado para dúvidas e triagem imediata de saúde." 
+      title: "Central 24h", 
+      desc: "Suporte clínico gratuito 24h por dia, todos os dias da semana para sua família." 
     }
   ];
 
   const specialties = [
-    "Cardiologia", "Ortopedia", "Otorrino", "Neurologia", 
-    "Psiquiatria", "Traumatologia", "Urologia", "Nutrição", 
-    "Dermatologia", "Psicologia", "Geriatria", "Endocrino", 
-    "Ginecologia", "Pediatria"
+    "Clínico Geral", "Neurologia", "Otorrinolaringologia", 
+    "Cardiologia", "Psiquiatria", "Dermatologia", 
+    "Psicologia", "Ortopedia", "Urologia", 
+    "Pediatria", "Traumatologia", "Endocrinologia", 
+    "Ginecologia", "Nutrição", "Geriatria"
   ];
 
   return (
@@ -35,14 +36,14 @@ export function Telemedicine() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
             <Activity className="w-4 h-4" />
-            Saúde Conectada
+            Rede de Especialidades
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-primary mb-6 tracking-tight">
-            Telemedicina que <br />
-            <span className="text-accent italic font-light">funciona onde você estiver.</span>
+            Nossas Especialidades <br />
+            <span className="text-accent italic font-light">Médicas Disponíveis</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Unimos tecnologia e atendimento humanizado para garantir assistência médica ágil e segura para você e sua família.
+            Assistência familiar completa com os melhores especialistas do Brasil, prontos para atender você com tecnologia e economia.
           </p>
         </div>
 
@@ -68,20 +69,20 @@ export function Telemedicine() {
             <div className="max-w-xl">
               <div className="flex items-center gap-2 mb-3">
                 <Stethoscope className="w-5 h-5 text-accent" />
-                <span className="text-accent font-black uppercase tracking-[0.2em] text-[10px]">Cuidado Especializado</span>
+                <span className="text-accent font-black uppercase tracking-[0.2em] text-[10px]">Cuidado que Conecta</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-black text-primary tracking-tight">
-                Principais Especialidades <br />
-                <span className="text-accent italic font-light">Disponíveis na Rede Shalom</span>
+                Consulte-se com Especialistas <br />
+                <span className="text-accent italic font-light">Sem sair de casa</span>
               </h3>
             </div>
             <div className="flex items-center gap-2 bg-success/10 px-4 py-2 rounded-full border border-success/20">
               <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
-              <span className="text-[10px] font-bold text-success uppercase tracking-widest">Especialistas Disponíveis</span>
+              <span className="text-[10px] font-bold text-success uppercase tracking-widest">Atendimento em todo o Brasil</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {specialties.map((spec, i) => (
               <div 
                 key={i} 
@@ -99,7 +100,7 @@ export function Telemedicine() {
 
           <div className="mt-12 text-center">
             <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
-              +500 especialistas prontos para atender você via vídeo ou chat
+              Telemedicina gratuita e ilimitada pelo aplicativo oficial
             </p>
           </div>
         </div>

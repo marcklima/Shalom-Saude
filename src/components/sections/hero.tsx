@@ -16,10 +16,10 @@ export function Hero() {
   }, []);
 
   const bullets = [
-    "Telemedicina 24h sem carência",
-    "Psicólogos e Saúde Mental",
-    "Assistência Funeral Inclusa",
-    "Cadastro 100% Digital e Seguro"
+    "Telemedicina Ilimitada pelo App",
+    "Central de Atendimento 24h",
+    "Cobertura em todo o Brasil",
+    "Assistência Familiar Completa"
   ];
 
   return (
@@ -41,16 +41,16 @@ export function Hero() {
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-success/20">
               <Activity className="w-4 h-4 animate-pulse" />
-              Assistência Imediata, Sem Burocracia
+              Assistência Familiar Shalom
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary mb-6 leading-[0.9] tracking-tighter">
-              A saúde que você merece, <br />
-              <span className="text-accent italic font-light">pelo preço que você pode.</span>
+              Cuidado que conecta, <br />
+              <span className="text-accent italic font-light">Proteção que acompanha.</span>
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl font-medium">
-              A SHALOM Saúde une tecnologia e cuidado humano para garantir paz de espírito 24h por dia para você e sua família.
+              Economia e qualidade para cuidar do que mais importa: sua família. Tenha telemedicina ilimitada e atendimento 24h na palma da mão.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
@@ -67,7 +67,7 @@ export function Hero() {
                 Começar Cadastro Agora
               </CtaButton>
               <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest italic">
-                * Sem carência para teleconsulta
+                * Atendimento imediato pelo APP
               </p>
             </div>
           </div>
@@ -90,7 +90,7 @@ export function Hero() {
                   </div>
                   <div>
                     <p className="text-[10px] font-black text-accent uppercase tracking-widest mb-1">Status da Rede</p>
-                    <p className="text-base font-black text-primary leading-none">Médicos Online Agora</p>
+                    <p className="text-base font-black text-primary leading-none">Cobertura Nacional Ativa</p>
                   </div>
                 </div>
               </div>

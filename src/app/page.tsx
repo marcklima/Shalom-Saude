@@ -5,6 +5,7 @@ import { Telemedicine } from "@/components/sections/telemedicine";
 import { PainRelief } from "@/components/sections/pain-relief";
 import { HealthOrientation } from "@/components/sections/health-orientation";
 import { MentalHealth } from "@/components/sections/mental-health";
+import { VideoPresentation } from "@/components/sections/video-presentation";
 import { Pricing } from "@/components/sections/pricing";
 import { Steps } from "@/components/sections/steps";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -38,6 +39,8 @@ export default function Home() {
       <div className="py-10 flex justify-center bg-white border-y">
         <CtaButton variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">Ver Todas Especialidades</CtaButton>
       </div>
+
+      <VideoPresentation />
 
       <HealthOrientation />
 
