@@ -33,6 +33,10 @@ export function Telemedicine() {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
+      {/* Camada de Watermarks mais densa conforme solicitado */}
+      <div className="absolute inset-0 bg-watermark-plus opacity-5 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-watermark-medical opacity-10 pointer-events-none" />
+      
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
