@@ -87,7 +87,7 @@ export function Pricing() {
                 {plan.features.map((f, j) => (
                   <div key={j} className="flex items-center gap-4">
                     <div className="bg-success/10 p-1.5 rounded-full">
-                      <Check className="w-4 h-4 text-success" />
+                      <Check className="h-4 w-4 text-success" />
                     </div>
                     <span className="text-sm text-muted-foreground font-bold">{f}</span>
                   </div>
