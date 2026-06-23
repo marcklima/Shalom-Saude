@@ -17,43 +17,42 @@ export function VideoPresentation() {
             <span className="text-accent italic font-light">cuidar de quem você ama</span>
           </h2>
           <p className="text-muted-foreground font-medium max-w-xl mx-auto">
-            Entenda por que milhares de famílias já escolheram a Shalom Saúde para sua proteção diária.
+            Entenda por que milhares de famílias já escolheram a Shalom Saúde para sua proteção diária através do nosso aplicativo.
           </p>
         </div>
 
-        {/* Container do Vídeo com Máscara de Engenharia para Ocultar Branding */}
-        <div className="max-w-[360px] mx-auto bg-slate-900 rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.4)] overflow-hidden border-[12px] border-slate-900 relative aspect-[9/16] group">
-          {/* Oculta os elementos de interface do Instagram com deslocamento e escala */}
-          <div className="absolute inset-0 w-full h-[140%] -top-[20%] scale-[1.1]">
+        {/* Container do Vídeo com Máscara para ocultar UI do Google Drive */}
+        <div className="max-w-[320px] mx-auto bg-slate-900 rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.4)] overflow-hidden border-[10px] border-slate-900 relative aspect-[9/16] group">
+          
+          {/* Iframe do Google Drive com deslocamento para esconder controles superiores e inferiores */}
+          <div className="absolute inset-0 w-full h-[115%] -top-[7.5%] scale-[1.05]">
              <iframe 
-                src="https://www.instagram.com/p/DY4b-zzRyJH/embed" 
-                className="w-full h-full border-none pointer-events-none"
-                frameBorder="0" 
-                scrolling="no" 
-                allowTransparency={true}
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                src="https://drive.google.com/file/d/1wJkohD1qcZgYPIIQqq3vISvqMBKVHgFq/preview" 
+                className="w-full h-full border-none"
+                allow="autoplay"
+                frameBorder="0"
               ></iframe>
           </div>
           
-          {/* Overlay Transparente de Bloqueio: Impede cliques que levariam ao Instagram */}
+          {/* Overlay Invisível de Bloqueio: Impede cliques que abririam o link do Drive */}
           <div className="absolute inset-0 bg-transparent cursor-default z-30" />
           
-          {/* Design de Hardware Mockup */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-slate-900 rounded-b-2xl z-40" />
+          {/* Mockup de Hardware Detail */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-5 bg-slate-900 rounded-b-2xl z-40" />
           <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-slate-800 rounded-full z-40" />
         </div>
         
         <div className="mt-16 text-center animate-pulse">
-          <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-success/20">
+          <div className="inline-flex items-center gap-3 bg-success/10 text-success px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest border border-success/20 shadow-sm">
              <span className="w-2 h-2 bg-success rounded-full" />
-             Atendimento via App em Tempo Real
+             Vídeo Demonstrativo Real
           </div>
         </div>
       </div>
       
-      {/* Marcas d'água sutis */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-watermark-plus opacity-10 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-watermark-medical opacity-10 pointer-events-none" />
+      {/* Marcas d'água sutis para profundidade */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-watermark-plus opacity-5 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-watermark-medical opacity-5 pointer-events-none" />
     </section>
   );
 }
