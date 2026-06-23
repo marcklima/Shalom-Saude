@@ -3,8 +3,9 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'SHALOM Saúde | Sua Saúde Completa e Segura',
-  description: 'Planos de saúde com Telemedicina, Assistência Funeral e Saúde Mental. Cadastro 100% digital.',
+  title: 'SHALOM Saúde | Telemedicina 24h e Plano de Saúde Digital Familiar',
+  description: 'Proteja sua família com a SHALOM Saúde. Telemedicina ilimitada 24h, apoio à Saúde Mental e rede de descontos em farmácias. Cadastro 100% digital e sem carência.',
+  keywords: 'plano de saúde digital, telemedicina 24 horas, saúde mental online, assistência familiar, descontos em farmácias, shalom saúde',
 };
 
 export default function RootLayout({

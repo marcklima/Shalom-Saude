@@ -10,6 +10,7 @@ import { VideoPresentation } from "@/components/sections/video-presentation";
 import { Pricing } from "@/components/sections/pricing";
 import { Steps } from "@/components/sections/steps";
 import { Testimonials } from "@/components/sections/testimonials";
+import { Faq } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
 import { ReferralManager } from "@/components/referral-manager";
 import { CtaButton } from "@/components/cta-button";
@@ -69,7 +70,9 @@ export default function Home() {
 
       <Steps />
 
-      {/* Seção Final de Conversão - Design Ajustado para Transição Suave */}
+      <Faq />
+
+      {/* Seção Final de Conversão */}
       <section className="py-32 md:py-48 bg-accent text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest mb-10 backdrop-blur-sm border border-white/20">
@@ -95,7 +98,6 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Camadas Visuais para Suavizar Transição com o Rodapé */}
         <div className="absolute inset-0 bg-grid-subtle text-white/5 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
       </section>

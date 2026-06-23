@@ -1,7 +1,7 @@
 
 "use client";
 
-import { CheckCircle2, Activity } from "lucide-react";
+import { CheckCircle2, Activity, Clock } from "lucide-react";
 import { CtaButton } from "@/components/cta-button";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -41,9 +41,15 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
-            <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-success/20">
-              <Activity className="w-4 h-4 animate-pulse" />
-              Assistência Familiar Shalom
+            <div className="flex flex-wrap gap-2 mb-6">
+              <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-success/20">
+                <Activity className="w-4 h-4 animate-pulse" />
+                Assistência Familiar Shalom
+              </div>
+              <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-orange-500/20 animate-tag-pulse">
+                <Clock className="w-4 h-4" />
+                Preços de Tabela 2024 - Tempo Limitado
+              </div>
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary mb-6 leading-[0.9] tracking-tighter">
@@ -52,7 +58,7 @@ export function Hero() {
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl font-medium">
-              Economia e qualidade para cuidar do que mais importa: sua família. Tenha telemedicina ilimitada e atendimento 24h na palma da mão.
+              Economia e qualidade para cuidar do que mais importa: sua família. Tenha telemedicina ilimitada e atendimento 24h na palma da mão, <span className="text-primary font-bold">sem carência.</span>
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
@@ -68,8 +74,8 @@ export function Hero() {
               <CtaButton className="w-full sm:w-auto text-xl py-7 px-10 shadow-xl">
                 Começar Cadastro Agora
               </CtaButton>
-              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest italic">
-                * Atendimento imediato pelo APP
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest italic text-center sm:text-left">
+                * Atendimento imediato <br className="hidden sm:block" /> em todo o Brasil
               </p>
             </div>
           </div>
@@ -98,7 +104,6 @@ export function Hero() {
               </div>
             </div>
             
-            {/* Elementos Decorativos de Fundo */}
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-pulse" />
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-success/10 rounded-full blur-3xl animate-pulse" />
           </div>
