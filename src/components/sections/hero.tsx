@@ -1,7 +1,7 @@
 
 "use client";
 
-import { CheckCircle2, Activity, Clock } from "lucide-react";
+import { CheckCircle2, Activity } from "lucide-react";
 import { CtaButton } from "@/components/cta-button";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -33,6 +33,7 @@ export function Hero() {
           fill 
           className="object-cover opacity-5"
           priority
+          data-ai-hint="modern hospital"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-accent/5"></div>
         <div className="absolute inset-0 bg-watermark-medical opacity-20 pointer-events-none" />
@@ -45,10 +46,6 @@ export function Hero() {
               <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-success/20">
                 <Activity className="w-4 h-4 animate-pulse" />
                 Assistência Familiar Shalom
-              </div>
-              <div className="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest border border-orange-500/20 animate-tag-pulse">
-                <Clock className="w-4 h-4" />
-                Preços de Tabela 2024 - Tempo Limitado
               </div>
             </div>
             
@@ -88,6 +85,7 @@ export function Hero() {
                 width={600} 
                 height={600} 
                 className="object-cover w-full aspect-square"
+                data-ai-hint="telemedicine app"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
               
