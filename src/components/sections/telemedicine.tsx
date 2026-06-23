@@ -33,9 +33,10 @@ export function Telemedicine() {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Camada de Watermarks mais densa conforme solicitado */}
+      {/* Camada de Watermarks densa para autoridade */}
       <div className="absolute inset-0 bg-watermark-plus opacity-5 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-watermark-medical opacity-10 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-80 h-80 bg-watermark-dna opacity-5 pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -52,7 +53,7 @@ export function Telemedicine() {
           </p>
         </div>
 
-        {/* Features Grid */}
+        {/* Grid de Benefícios Principais */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
           {features.map((f, i) => (
             <div 
@@ -68,7 +69,7 @@ export function Telemedicine() {
           ))}
         </div>
 
-        {/* Especialidades - Design Moderno, Nítido e Legível */}
+        {/* Grid de Especialidades - Design Moderno e Nítido */}
         <div className="bg-slate-50 rounded-[3rem] p-8 md:p-12 border border-slate-100 relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="max-w-xl">
@@ -83,10 +84,11 @@ export function Telemedicine() {
             </div>
             <div className="flex items-center gap-2 bg-success/10 px-4 py-2 rounded-full border border-success/20">
               <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
-              <span className="text-[10px] font-bold text-success uppercase tracking-widest">Atendimento 24h Disponível</span>
+              <span className="text-[10px] font-bold text-success uppercase tracking-widest">Atendimento 24h Ativo</span>
             </div>
           </div>
 
+          {/* Lista de Especialidades com Alto Contraste */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {specialties.map((spec, i) => (
               <div 
@@ -105,7 +107,7 @@ export function Telemedicine() {
 
           <div className="mt-12 text-center">
             <p className="text-[10px] font-black text-muted-foreground/60 uppercase tracking-[0.2em]">
-              Telemedicina 100% Gratuita para assinantes
+              Telemedicina 100% Digital para assinantes
             </p>
           </div>
           

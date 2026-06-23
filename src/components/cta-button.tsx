@@ -10,6 +10,7 @@ interface CtaButtonProps extends ButtonProps {
 }
 
 export function CtaButton({ className, children, pulse = true, ...props }: CtaButtonProps) {
+  // Sua URL de afiliado personalizada e obrigatória
   const affiliateUrl = "https://shalon-saude.vercel.app/cadastro?ref=MARCELO-LIMA";
 
   return (

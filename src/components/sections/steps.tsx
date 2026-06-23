@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -19,7 +20,7 @@ export function Steps() {
   useEffect(() => {
     if (isHovered) return;
 
-    // Reduzido para 1.5 segundos para uma narrativa mais ágil
+    // Tempo de transição reduzido para 1.5s (Narrativa Ágil)
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length);
     }, 1500);
@@ -42,7 +43,7 @@ export function Steps() {
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-          {/* Progress Line (Desktop) */}
+          {/* Progress Line Desktop */}
           <div className="absolute top-10 left-0 w-full h-[2px] bg-primary/5 hidden lg:block">
             <div 
               className="h-full bg-success transition-all duration-700 ease-in-out" 
@@ -81,11 +82,6 @@ export function Steps() {
                     )}>
                       {i + 1}
                     </div>
-
-                    <div className={cn(
-                      "absolute inset-0 bg-white/20 -translate-x-full transition-transform duration-500",
-                      isCurrent && "translate-x-0"
-                    )} />
                   </div>
 
                   <h4 className={cn(
@@ -100,12 +96,6 @@ export function Steps() {
                   )}>
                     {step.desc}
                   </p>
-
-                  {i < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 -right-4 translate-x-1/2 z-0 opacity-10">
-                      <ArrowRight className="w-6 h-6" />
-                    </div>
-                  )}
                 </div>
               );
             })}
