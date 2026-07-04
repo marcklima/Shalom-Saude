@@ -65,7 +65,6 @@ export default function Home() {
 
       <Faq />
 
-      {/* Seção Final de Conversão */}
       <section className="py-32 md:py-48 bg-accent text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest mb-10 backdrop-blur-sm border border-white/20">

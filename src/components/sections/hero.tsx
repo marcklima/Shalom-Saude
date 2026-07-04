@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const heroImg = PlaceHolderImages.find(img => img.id === "hero-bg");
-  // Utilizando o link direto do Google Drive para a imagem principal
   const mockupImgUrl = "https://lh3.googleusercontent.com/d/1yDdLSNlVFgKgsrdmBsNFgg15o12yq1gn";
 
   useEffect(() => {
@@ -26,7 +25,6 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-10 pb-20 lg:pt-20 lg:pb-24 bg-white">
-      {/* Background with Overlay e Watermark */}
       <div className="absolute inset-0 -z-10">
         <Image 
           src={heroImg?.imageUrl || ""} 

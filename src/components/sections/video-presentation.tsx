@@ -6,7 +6,6 @@ import { Play } from "lucide-react";
 export function VideoPresentation() {
   return (
     <section className="py-24 bg-slate-50 relative overflow-hidden">
-      {/* Camadas de Marca d'água para profundidade */}
       <div className="absolute inset-0 bg-watermark-medical opacity-5 pointer-events-none" />
       <div className="absolute top-0 right-0 w-64 h-64 bg-watermark-plus opacity-5 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-watermark-dna opacity-5 pointer-events-none" />
@@ -26,10 +25,7 @@ export function VideoPresentation() {
           </p>
         </div>
 
-        {/* Container do Vídeo: Mockup de Smartphone com Mascaramento de UI */}
         <div className="max-w-[320px] mx-auto bg-slate-900 rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.4)] overflow-hidden border-[10px] border-slate-900 relative aspect-[9/16] group">
-          
-          {/* Iframe do Google Drive com Autoplay e Mute (Hack para esconder barras de UI) */}
           <div className="absolute inset-0 w-full h-[115%] -top-[7.5%] scale-[1.05]">
              <iframe 
                 src="https://drive.google.com/file/d/1wJkohD1qcZgYPIIQqq3vISvqMBKVHgFq/preview?autoplay=1&mute=1" 
@@ -39,10 +35,8 @@ export function VideoPresentation() {
               ></iframe>
           </div>
           
-          {/* Overlay Invisível: Bloqueia cliques que levariam o usuário para fora da LP */}
           <div className="absolute inset-0 bg-transparent cursor-default z-30" />
           
-          {/* Detalhes do Hardware do Mockup */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-5 bg-slate-900 rounded-b-2xl z-40" />
           <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-slate-800 rounded-full z-40" />
         </div>
