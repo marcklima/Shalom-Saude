@@ -20,8 +20,8 @@ Se você teve erro de permissão com SSH, use o método HTTPS que é mais garant
    ```
 
 3. **Sobre a Senha:**
-   Ao pedir a senha, utilize um **Personal Access Token (PAT)** do GitHub. 
-   > Você gera um em: *GitHub > Settings > Developer Settings > Personal Access Tokens > Tokens (classic)*.
+   Ao pedir a senha, utilize um **Personal Access Token (PAT)** do GitHub no lugar da sua senha comum. 
+   > **Como gerar um PAT:** Vá em *GitHub > Settings > Developer Settings > Personal Access Tokens > Tokens (classic)*. Selecione a permissão `repo` e gere o token.
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -34,7 +34,7 @@ Se você teve erro de permissão com SSH, use o método HTTPS que é mais garant
 ## 📱 Funcionalidades Implementadas
 
 - **Hero de Alta Conversão:** Com mockup de smartphone e imagem institucional integrada.
-- **Vídeo de Demonstração:** Autoplay silencioso via Google Drive.
+- **Vídeo de Demonstração:** Carregamento inteligente com autoplay silencioso após 3 segundos e controles de play/pause ativos.
 - **Pain Relief Section:** Psicologia de vendas aplicada com contraste visual (Sistema Tradicional vs Shalom).
 - **Especialidades:** Grid moderno com 15 especialidades médicas.
 - **Preços Dinâmicos:** Cards focados em conversão familiar (o mais escolhido) e empresarial.
