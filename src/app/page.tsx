@@ -1,4 +1,10 @@
 
+/**
+ * SHALOM SAÚDE - Landing Page Principal
+ * Versão: 1.0.0 - Produção
+ * Foco: Conversão, Responsividade e SEO
+ */
+
 import { Suspense } from "react";
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
