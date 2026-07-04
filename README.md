@@ -2,26 +2,26 @@
 
 Este é o projeto da Landing Page oficial da **SHALOM Saúde**, focada em telemedicina 24h e planos de saúde digitais.
 
-## 🚀 Como subir para o SEU GitHub (Usando SSH)
+## 🚀 Como subir para o SEU GitHub (Método HTTPS - Recomendado)
 
-Como você já tem o link SSH, siga estes passos no terminal do Firebase Studio:
+Se você teve erro de permissão com SSH, use o método HTTPS que é mais garantido:
 
-1. **Remova qualquer configuração antiga:**
+1. **Configure o repositório correto:**
    ```bash
    git remote remove origin
+   git remote add origin https://github.com/marcklima/Shalom-Saude.git
    ```
 
-2. **Adicione o seu repositório oficial:**
-   ```bash
-   git remote add origin git@github.com:marcklima/Shalom-Saude.git
-   ```
-
-3. **Envie os arquivos:**
+2. **Envie os arquivos:**
    ```bash
    git add .
    git commit -m "feat: landing page finalizada, responsiva e otimizada para SEO"
    git push -u origin main
    ```
+
+3. **Sobre a Senha:**
+   Ao pedir a senha, utilize um **Personal Access Token (PAT)** do GitHub. 
+   > Você gera um em: *GitHub > Settings > Developer Settings > Personal Access Tokens > Tokens (classic)*.
 
 ## 🛠️ Tecnologias Utilizadas
 
