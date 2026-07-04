@@ -2,35 +2,38 @@
 
 Este é o projeto da Landing Page oficial da **SHALOM Saúde**, focada em telemedicina 24h e planos de saúde digitais.
 
-## 🚀 Como subir para o GitHub
+## 🚀 Como subir para o SEU GitHub
 
-1. Crie um repositório no GitHub.
-2. No terminal deste projeto, execute:
+1. Vá ao seu GitHub e crie um novo repositório chamado `shalom-saude`.
+2. Não marque as opções de "Add a README" ou "License".
+3. Copie o link HTTPS que o GitHub vai te mostrar (ex: `https://github.com/seu-usuario/shalom-saude.git`).
+4. No terminal do Firebase Studio, execute:
    ```bash
    git init
    git add .
-   git commit -m "Initial commit"
+   git commit -m "feat: landing page shalom saúde finalizada e responsiva"
    git branch -M main
-   git remote add origin https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+   # REMOVA o remote antigo se deu erro: git remote remove origin
+   git remote add origin O_LINK_QUE_VOCE_COPIOU_AQUI
    git push -u origin main
    ```
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Next.js 15 (App Router)**
-- **Tailwind CSS** (Estilização responsiva)
-- **ShadCN UI** (Componentes de interface)
-- **Lucide React** (Ícones)
-- **Genkit** (IA para saúde - módulo opcional)
+- **Next.js 15 (App Router)** - Performance e SEO
+- **Tailwind CSS** - Design Responsivo de alta fidelidade
+- **ShadCN UI** - Componentes de interface premium
+- **Lucide React** - Ícones médicos
+- **Genkit** - Módulo de IA (opcional)
 
 ## 📱 Funcionalidades
 
-- **Hero Responsiva:** Com mockup de vídeo institucional.
-- **Pain Relief Section:** Contraste persuasivo entre o sistema tradicional e a Shalom.
-- **Especialidades:** Grid moderna com todas as áreas de atendimento.
-- **Preços Dinâmicos:** Cards otimizados para conversão.
-- **FAQ:** Seção de dúvidas frequentes para quebra de objeções.
-- **Referral System:** Gerenciamento automático de links de consultores via URL.
+- **Hero Premium:** Com mockup de smartphone e vídeo institucional autoplay.
+- **Pain Relief Section:** Psicologia de vendas aplicada com contraste visual.
+- **Especialidades:** Grid moderna com 15 especialidades médicas.
+- **Preços Dinâmicos:** Cards focados em conversão familiar e empresarial.
+- **FAQ Estratégico:** Quebra de objeções integrada para acelerar a venda.
+- **Referral System:** Gerenciamento de links de consultores via URL (`?ref=NOMEDOCONSULTOR`).
 
 ## 📄 Licença
 
