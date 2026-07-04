@@ -4,7 +4,6 @@ import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
 import { Telemedicine } from "@/components/sections/telemedicine";
 import { PainRelief } from "@/components/sections/pain-relief";
-import { HealthOrientation } from "@/components/sections/health-orientation";
 import { MentalHealth } from "@/components/sections/mental-health";
 import { VideoPresentation } from "@/components/sections/video-presentation";
 import { Pricing } from "@/components/sections/pricing";
@@ -43,12 +42,6 @@ export default function Home() {
       </div>
 
       <VideoPresentation />
-
-      <HealthOrientation />
-
-      <div className="py-10 flex justify-center bg-background border-y">
-        <CtaButton>Falar com Assistente IA</CtaButton>
-      </div>
 
       <MentalHealth />
 
