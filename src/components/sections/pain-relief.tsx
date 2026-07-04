@@ -13,7 +13,7 @@ export function PainRelief() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -35,39 +35,39 @@ export function PainRelief() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-32 bg-primary text-white overflow-hidden relative">
+    <section ref={sectionRef} className="py-20 md:py-32 bg-primary text-white overflow-hidden relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20 max-w-3xl mx-auto">
+        <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
           <span className="text-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">Contraste de Realidade</span>
           <h2 className={`text-3xl md:text-5xl font-black mb-6 tracking-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Chega de sofrer com o <br/><span className="text-red-400">sistema tradicional</span>
           </h2>
-          <p className={`text-primary-foreground/60 text-lg transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className={`text-primary-foreground/60 text-base md:text-lg transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             Nós transformamos o caos em cuidado. Veja a diferença entre o que você tem hoje e o que a Shalom oferece.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch max-w-6xl mx-auto relative">
-          {/* O Problema - Redesign com visual "estressante" */}
-          <div className={`group relative bg-white/5 border border-white/10 p-10 rounded-[3rem] transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'} hover:bg-white/10`}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch max-w-6xl mx-auto relative">
+          {/* O Problema */}
+          <div className={`group relative bg-white/5 border border-white/10 p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-y-8 lg:-translate-x-12'} hover:bg-white/10`}>
             <div className="flex items-center gap-4 mb-8">
               <div className="bg-red-500/20 p-3 rounded-2xl">
-                <ShieldAlert className="w-8 h-8 text-red-400" />
+                <ShieldAlert className="w-6 md:w-8 h-6 md:h-8 text-red-400" />
               </div>
-              <h3 className="text-2xl font-bold text-red-400">O Cenário Comum</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-red-400">O Cenário Comum</h3>
             </div>
-            <ul className="space-y-6">
+            <ul className="space-y-4 md:space-y-6">
               {pains.map((pain, i) => (
                 <li key={i} className="flex items-start gap-4 text-primary-foreground/50 group-hover:text-primary-foreground/70 transition-colors">
                   <XCircle className="w-5 h-5 text-red-500/50 mt-1 shrink-0" />
-                  <span className="text-base font-medium leading-relaxed">{pain}</span>
+                  <span className="text-sm md:text-base font-medium leading-relaxed">{pain}</span>
                 </li>
               ))}
             </ul>
             
             {/* Background Texture */}
             <div className="absolute top-0 right-0 p-8 opacity-5">
-               <ShieldAlert className="w-32 h-32" />
+               <ShieldAlert className="w-24 md:w-32 h-24 md:h-32" />
             </div>
           </div>
 
@@ -78,24 +78,24 @@ export function PainRelief() {
             </div>
           </div>
 
-          {/* A Solução - Redesign com visual "alívio" */}
-          <div className={`group relative bg-white p-10 rounded-[3rem] shadow-[0_30px_100px_rgba(0,0,0,0.3)] transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'} hover:scale-[1.02]`}>
+          {/* A Solução */}
+          <div className={`group relative bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-2xl transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-y-8 lg:translate-x-12'} hover:scale-[1.02]`}>
             <div className="flex items-center gap-4 mb-8">
               <div className="bg-success/10 p-3 rounded-2xl">
-                <ShieldCheck className="w-8 h-8 text-success" />
+                <ShieldCheck className="w-6 md:w-8 h-6 md:h-8 text-success" />
               </div>
-              <h3 className="text-2xl font-bold text-primary">A Experiência Shalom</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-primary">A Experiência Shalom</h3>
             </div>
-            <ul className="space-y-6">
+            <ul className="space-y-4 md:space-y-6">
               {solutions.map((solution, i) => (
                 <li key={i} className="flex items-start gap-4 text-muted-foreground group-hover:text-primary transition-colors">
                   <CheckCircle2 className="w-5 h-5 text-success mt-1 shrink-0" />
-                  <span className="text-base font-bold leading-relaxed">{solution}</span>
+                  <span className="text-sm md:text-base font-bold leading-relaxed">{solution}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-10 p-6 bg-success/5 rounded-2xl border border-success/10">
-               <p className="text-success text-sm font-black uppercase tracking-widest text-center">Tranquilidade Garantida 24h</p>
+            <div className="mt-8 md:mt-10 p-4 md:p-6 bg-success/5 rounded-2xl border border-success/10">
+               <p className="text-success text-[10px] md:text-xs font-black uppercase tracking-widest text-center">Tranquilidade Garantida 24h</p>
             </div>
           </div>
         </div>

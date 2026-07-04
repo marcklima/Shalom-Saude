@@ -32,11 +32,11 @@ export function Telemedicine() {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-20 md:py-24 bg-white relative overflow-hidden">
       {/* Camada de Watermarks densa para autoridade */}
       <div className="absolute inset-0 bg-watermark-plus opacity-5 pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-watermark-medical opacity-10 pointer-events-none" />
-      <div className="absolute top-0 left-0 w-80 h-80 bg-watermark-dna opacity-5 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-watermark-medical opacity-10 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-60 md:w-80 h-60 md:h-80 bg-watermark-dna opacity-5 pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -48,17 +48,17 @@ export function Telemedicine() {
             Nossas Especialidades <br />
             <span className="text-accent italic font-light">Médicas Disponíveis</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Assistência familiar completa com os melhores especialistas do Brasil, prontos para atender você com tecnologia e economia.
           </p>
         </div>
 
         {/* Grid de Benefícios Principais */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 md:mb-24">
           {features.map((f, i) => (
             <div 
               key={i} 
-              className="group p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1"
+              className="group p-6 md:p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1"
             >
               <div className="mb-6 inline-block text-accent bg-white p-4 rounded-2xl shadow-sm group-hover:bg-accent group-hover:text-white transition-colors">
                 {f.icon}
@@ -70,8 +70,8 @@ export function Telemedicine() {
         </div>
 
         {/* Grid de Especialidades - Design Moderno e Nítido */}
-        <div className="bg-slate-50 rounded-[3rem] p-8 md:p-12 border border-slate-100 relative overflow-hidden">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="bg-slate-50 rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 border border-slate-100 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-12">
             <div className="max-w-xl">
               <div className="flex items-center gap-2 mb-3">
                 <Stethoscope className="w-5 h-5 text-accent" />
@@ -82,18 +82,18 @@ export function Telemedicine() {
                 <span className="text-accent italic font-light">Sem sair de casa</span>
               </h3>
             </div>
-            <div className="flex items-center gap-2 bg-success/10 px-4 py-2 rounded-full border border-success/20">
+            <div className="flex items-center gap-2 bg-success/10 px-4 py-2 rounded-full border border-success/20 w-fit">
               <span className="w-2 h-2 bg-success rounded-full animate-pulse" />
               <span className="text-[10px] font-bold text-success uppercase tracking-widest">Atendimento 24h Ativo</span>
             </div>
           </div>
 
           {/* Lista de Especialidades com Alto Contraste */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {specialties.map((spec, i) => (
               <div 
                 key={i} 
-                className="group relative bg-white p-6 rounded-2xl border border-slate-200 transition-all duration-300 hover:bg-primary hover:border-primary cursor-default shadow-sm hover:shadow-md"
+                className="group relative bg-white p-4 md:p-6 rounded-2xl border border-slate-200 transition-all duration-300 hover:bg-primary hover:border-primary cursor-default shadow-sm hover:shadow-md"
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-sm font-bold text-slate-700 group-hover:text-white tracking-tight transition-colors">
@@ -105,7 +105,7 @@ export function Telemedicine() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-10 md:mt-12 text-center">
             <p className="text-[10px] font-black text-muted-foreground/60 uppercase tracking-[0.2em]">
               Telemedicina 100% Digital para assinantes
             </p>

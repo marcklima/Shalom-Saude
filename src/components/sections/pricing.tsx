@@ -41,52 +41,53 @@ export function Pricing() {
   ];
 
   return (
-    <section className="py-32 bg-background overflow-hidden relative bg-watermark-dna">
+    <section className="py-24 md:py-32 bg-background overflow-hidden relative bg-watermark-dna">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16 md:mb-20">
           <span className="text-accent font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Invista em Você</span>
-          <h2 className="text-4xl md:text-6xl font-black text-primary tracking-tighter mb-6">Planos que cabem no bolso, <br/> <span className="text-accent">proteção que abraça a vida.</span></h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed font-medium">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-primary tracking-tighter mb-6">Planos que cabem no bolso, <br/> <span className="text-accent">proteção que abraça a vida.</span></h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg leading-relaxed font-medium">
             Sem letras miúdas. Sem multas abusivas. Apenas a liberdade de cuidar da sua saúde com transparência total.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto items-stretch">
           {plans.map((plan, i) => (
             <div 
               key={i} 
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
               className={`
-                relative bg-white rounded-[3rem] p-10 transition-all duration-500 flex flex-col border-4
-                ${plan.highlight ? `${plan.color} shadow-2xl z-20 md:scale-105` : 'border-transparent shadow-xl z-10'}
-                ${hoveredIdx !== null && hoveredIdx !== i ? 'opacity-40 scale-[0.97] grayscale' : 'opacity-100'}
+                relative bg-white rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-10 transition-all duration-500 flex flex-col border-4
+                ${plan.highlight ? `${plan.color} shadow-2xl z-20 lg:scale-105` : 'border-transparent shadow-xl z-10'}
+                ${hoveredIdx !== null && hoveredIdx !== i ? 'lg:opacity-40 lg:scale-[0.97] lg:grayscale' : 'opacity-100'}
                 hover:-translate-y-4 hover:shadow-accent/20 group
+                ${i === 2 && 'md:col-span-2 lg:col-span-1 max-w-md mx-auto lg:max-w-none lg:mx-0'}
               `}
             >
               {plan.highlight && (
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-success text-white px-8 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] animate-pulse shadow-xl whitespace-nowrap">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-success text-white px-6 md:px-8 py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] animate-pulse shadow-xl whitespace-nowrap">
                   🔥 O MAIS ESCOLHIDO Pelas Famílias
                 </div>
               )}
               
-              <div className="mb-10 text-center">
-                <div className={`w-14 h-14 rounded-2xl ${plan.accent} text-white flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-6 transition-transform`}>
+              <div className="mb-8 md:mb-10 text-center">
+                <div className={`w-12 md:w-14 h-12 md:h-14 rounded-2xl ${plan.accent} text-white flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:rotate-6 transition-transform`}>
                   {plan.icon}
                 </div>
-                <h3 className={`text-2xl font-black mb-6 ${plan.highlight ? 'text-accent' : 'text-primary'}`}>{plan.name}</h3>
+                <h3 className={`text-xl md:text-2xl font-black mb-6 ${plan.highlight ? 'text-accent' : 'text-primary'}`}>{plan.name}</h3>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-lg font-bold text-muted-foreground">R$</span>
-                  <span className="text-7xl font-black text-primary tracking-tighter">{plan.price}</span>
-                  <span className="text-sm font-medium text-muted-foreground">/mês</span>
+                  <span className="text-base md:text-lg font-bold text-muted-foreground">R$</span>
+                  <span className="text-5xl md:text-7xl font-black text-primary tracking-tighter">{plan.price}</span>
+                  <span className="text-xs md:text-sm font-medium text-muted-foreground">/mês</span>
                 </div>
-                {plan.subtitle && <p className="text-[10px] text-accent font-black mt-4 uppercase bg-accent/5 py-2 rounded-full tracking-widest">{plan.subtitle}</p>}
+                {plan.subtitle && <p className="text-[9px] md:text-[10px] text-accent font-black mt-4 uppercase bg-accent/5 py-2 rounded-full tracking-widest">{plan.subtitle}</p>}
               </div>
 
-              <div className="space-y-6 mb-12 flex-grow">
+              <div className="space-y-4 md:space-y-6 mb-10 md:mb-12 flex-grow">
                 {plan.features.map((f, j) => (
                   <div key={j} className="flex items-center gap-4">
-                    <div className="bg-success/10 p-1.5 rounded-full">
+                    <div className="bg-success/10 p-1.5 rounded-full shrink-0">
                       <Check className="h-4 w-4 text-success" />
                     </div>
                     <span className="text-sm text-muted-foreground font-bold">{f}</span>
@@ -95,7 +96,7 @@ export function Pricing() {
               </div>
 
               <CtaButton 
-                className={`w-full text-lg py-8 rounded-[1.5rem] shadow-xl ${plan.highlight ? 'bg-accent hover:bg-accent/90' : 'bg-primary hover:bg-primary/90'}`} 
+                className={`w-full text-base md:text-lg py-6 md:py-8 rounded-[1.5rem] shadow-xl ${plan.highlight ? 'bg-accent hover:bg-accent/90' : 'bg-primary hover:bg-primary/90'}`} 
                 pulse={plan.highlight}
               >
                 Aderir {plan.name}

@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const heroImg = PlaceHolderImages.find(img => img.id === "hero-bg");
-  const mockupImg = PlaceHolderImages.find(img => img.id === "telemedicine-user");
+  // Utilizando o link direto do Google Drive para a imagem principal
+  const mockupImgUrl = "https://lh3.googleusercontent.com/d/1yDdLSNlVFgKgsrdmBsNFgg15o12yq1gn";
 
   useEffect(() => {
     setIsVisible(true);
@@ -24,7 +25,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20 pb-24 bg-white">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-10 pb-20 lg:pt-20 lg:pb-24 bg-white">
       {/* Background with Overlay e Watermark */}
       <div className="absolute inset-0 -z-10">
         <Image 
@@ -49,12 +50,12 @@ export function Hero() {
               </div>
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary mb-6 leading-[0.9] tracking-tighter">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-primary mb-6 leading-[1.1] lg:leading-[0.9] tracking-tighter">
               Cuidado que conecta, <br />
               <span className="text-accent italic font-light">Proteção que acompanha.</span>
             </h1>
             
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl font-medium">
+            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl font-medium">
               Economia e qualidade para cuidar do que mais importa: sua família. Tenha telemedicina ilimitada e atendimento 24h na palma da mão, <span className="text-primary font-bold">sem carência.</span>
             </p>
 
@@ -68,7 +69,7 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <CtaButton className="w-full sm:w-auto text-xl py-7 px-10 shadow-xl">
+              <CtaButton className="w-full sm:w-auto text-lg md:text-xl py-6 md:py-7 px-8 md:px-10 shadow-xl">
                 Começar Cadastro Agora
               </CtaButton>
               <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest italic text-center sm:text-left">
@@ -80,7 +81,7 @@ export function Hero() {
           <div className={`relative transition-all duration-1000 delay-300 hidden lg:block ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white">
               <Image 
-                src={mockupImg?.imageUrl || ""} 
+                src={mockupImgUrl} 
                 alt="Telemedicine Service" 
                 width={600} 
                 height={600} 
